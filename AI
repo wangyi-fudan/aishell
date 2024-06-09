@@ -1,0 +1,17 @@
+#!/bin/bash
+input=""
+for	i	in	$*
+do
+	if [ ${i:0:1} = "#" ]; 
+	then
+		input=$input" "`cat ${i:1}`
+	else
+		input=$input" "$i
+	fi
+done;
+input=`echo $input | CleanChar`
+curl -s -XPOST  'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-speed-128k?access_token=自行填写百度的access_token' -d '{
+   "messages": [
+    {"role":"user","content":"'$input'"}
+   ]
+}' | iconv -f utf-8 -t utf-8 |jq | grep '"result":' | sed 's/  "result": "//g' | sed 's/",$//g' | sed 's/\\n/\n/g'
