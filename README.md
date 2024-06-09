@@ -16,7 +16,7 @@ curl -X POST 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credent
 
 把"自行填写百度的access_token"替换为上一步获得的access_token。存盘保存。
 
-5:	编译格式化其CleanChar
+5:	编译格式化器(用于清除非中文)CleanChar
 
 g++ CleanChar.cpp -o CleanChar -O3 -Wall -static -s
 
