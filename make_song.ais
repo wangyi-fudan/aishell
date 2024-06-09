@@ -1,0 +1,5 @@
+#!/bin/bash
+topic=$1
+cmd="请为以下主题写首歌：";
+ret=`AI "\""$cmd"\"" "\""$topic"\"" `
+echo $ret

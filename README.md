@@ -24,6 +24,11 @@ g++ CleanChar.cpp -o CleanChar -O3 -Wall -static -s
 
 sudo cp AI CleanChar /usr/bin/
 
-7:	测试
+7:	测试AI
 
 AI	写一首关于秋天的小诗
+
+8:	测试AIS脚本
+
+./make_song.ais 天行健
+
